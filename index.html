@@ -3,125 +3,724 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Company Name | Recruitment & Talent Solutions</title>
+<title>Quantum Info Systems | Recruitment & Talent Solutions</title>
+<meta name="description" content="Quantum Info Systems — Connecting top talent with leading companies. Expert recruitment, contract staffing, and executive search services.">
+<meta property="og:title" content="Quantum Info Systems | Recruitment & Talent Solutions">
+<meta property="og:description" content="Expert recruitment, contract staffing, and executive search services.">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://img.icons8.com/fluency/48/combo-chart.png" type="image/png">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --primary-light: #eef2ff;
+    --text: #3f3f46;
+    --text-light: #71717a;
+    --heading: #18181b;
+    --bg-warm: #faf8f5;
+    --bg-section: #f5f3ef;
+    --white: #ffffff;
+    --footer-bg: #1e1b4b;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 8px 30px rgba(99,102,241,0.08);
+    --shadow-lg: 0 20px 50px rgba(99,102,241,0.12);
+    --radius: 16px;
+    --radius-pill: 50px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    color: #333;
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--white);
 }
 
+/* ─── Navbar (Frosted Glass) ─── */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s;
+}
+
+nav:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+nav .logo {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--heading);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+nav .logo span {
+    color: var(--primary);
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+    border-radius: 2px;
+}
+
+nav .nav-links a:hover {
+    color: var(--primary);
+}
+
+nav .nav-links a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    font-size: 22px;
+    color: var(--heading);
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* ─── Hero ─── */
 header {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
+    background: linear-gradient(135deg, rgba(30,27,75,0.82), rgba(99,102,241,0.65)),
+    url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 120px 20px;
+    padding: 180px 20px 130px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 48px;
+    font-size: 52px;
     margin: 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+    animation: fadeInDown 0.8s ease;
 }
 
-header p {
-    font-size: 20px;
-    margin-top: 15px;
+header .tagline {
+    font-size: 18px;
+    margin-top: 16px;
+    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-buttons {
+    margin-top: 36px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease;
 }
 
 .btn {
     display: inline-block;
-    margin-top: 25px;
-    padding: 12px 30px;
-    background: #0077ff;
+    padding: 14px 36px;
+    background: var(--primary);
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99,102,241,0.3);
 }
 
+.btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99,102,241,0.35);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary);
+    border-color: white;
+    box-shadow: 0 8px 25px rgba(255,255,255,0.2);
+}
+
+/* ─── Sections ─── */
 section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     max-width: 1100px;
     margin: auto;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 12px;
+    font-size: 34px;
+    color: var(--heading);
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* ─── Services ─── */
 .services {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 28px;
 }
 
 .card {
     flex: 1;
     min-width: 280px;
-    padding: 25px;
-    border-radius: 8px;
-    background: #f4f4f4;
+    padding: 36px 32px;
+    border-radius: var(--radius);
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-footer {
-    background: #111;
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), #a78bfa);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card .icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card .icon-wrap i {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+    color: var(--heading);
+    font-weight: 600;
+}
+
+.card p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+/* ─── Stats ─── */
+.stats-section {
+    background: linear-gradient(135deg, #6366f1, #4338ca);
     color: white;
+    padding: 80px 20px;
+    border-radius: 0;
+}
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 950px;
+    margin: auto;
+}
+
+.stat-item {
     text-align: center;
-    padding: 20px;
+    min-width: 180px;
+    flex: 1;
+    padding: 24px;
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    backdrop-filter: blur(4px);
+    transition: background 0.3s;
+}
+
+.stat-item:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+.stat-item .number {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.stat-item .label {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 6px;
+    font-weight: 300;
+}
+
+/* ─── Industries ─── */
+.industries-section {
+    background: var(--bg-warm);
+    padding: 100px 20px;
+}
+
+.industry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.industry-tag {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 12px 26px;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.industry-tag:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+    border-color: rgba(99,102,241,0.2);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.industry-tag i {
+    color: var(--primary);
+}
+
+/* ─── Testimonials ─── */
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.testimonial-card {
+    flex: 1;
+    min-width: 300px;
+    background: var(--white);
+    padding: 36px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0,0,0,0.04);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-card .quote-icon {
+    font-size: 32px;
+    color: var(--primary);
+    opacity: 0.25;
+    margin-bottom: 12px;
+}
+
+.testimonial-card .stars {
+    color: #fbbf24;
+    font-size: 14px;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+    margin: 0;
+}
+
+.testimonial-card .author {
+    margin-top: 20px;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--heading);
+    font-size: 15px;
+}
+
+.testimonial-card .role {
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* ─── Contact ─── */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-item {
+    text-align: center;
+    min-width: 220px;
+    padding: 30px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+}
+
+.contact-item i {
+    font-size: 26px;
+    color: var(--primary);
+    margin-bottom: 12px;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    background: var(--primary-light);
+    border-radius: 14px;
+    display: inline-block;
+}
+
+.contact-item p {
+    margin: 10px 0 0;
+}
+
+.contact-item a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: var(--primary-hover);
+}
+
+/* ─── Footer ─── */
+footer {
+    background: var(--footer-bg);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+footer .social-links {
+    margin-bottom: 16px;
+}
+
+footer .social-links a {
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    margin: 0 12px;
+    transition: all 0.3s;
+}
+
+footer .social-links a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ─── Animations ─── */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    header {
+        padding: 140px 20px 100px;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header .tagline {
+        font-size: 15px;
+    }
+
+    nav {
+        padding: 14px 20px;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 62px;
+        right: 16px;
+        background: rgba(255,255,255,0.97);
+        backdrop-filter: blur(16px);
+        padding: 20px 28px;
+        border-radius: 14px;
+        gap: 14px;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    section {
+        padding: 70px 16px;
+    }
+
+    .stat-item .number {
+        font-size: 32px;
+    }
+
+    .stats-section, .industries-section {
+        padding: 70px 16px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- Navbar -->
+<nav>
+    <a href="#" class="logo">Quantum<span>Info</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+    </button>
+</nav>
+
+<!-- Hero -->
 <header>
-    <h1>Your Company Name</h1>
-    <p>Connecting Top Talent With Leading Companies</p>
-    <a href="#contact" class="btn">Hire Talent</a>
+    <h1>Quantum Info Systems</h1>
+    <p class="tagline">Connecting Top Talent With Leading Companies</p>
+    <div class="hero-buttons">
+        <a href="#contact" class="btn">Hire Talent</a>
+        <a href="#contact" class="btn btn-outline">Looking for a Job?</a>
+    </div>
 </header>
 
-<section>
+<!-- Services -->
+<section id="services">
     <h2>Our Services</h2>
+    <p class="section-subtitle">Tailored recruitment solutions to power your growth</p>
     <div class="services">
         <div class="card">
+            <div class="icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
             <h3>Permanent Recruitment</h3>
-            <p>End-to-end hiring solutions for long-term placements.</p>
+            <p>End-to-end hiring solutions for long-term placements across all levels.</p>
         </div>
         <div class="card">
+            <div class="icon-wrap"><i class="fa-solid fa-clock"></i></div>
             <h3>Contract Staffing</h3>
-            <p>Flexible workforce solutions for short and long-term projects.</p>
+            <p>Flexible workforce solutions for short and long-term project needs.</p>
         </div>
         <div class="card">
+            <div class="icon-wrap"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
             <h3>Executive Search</h3>
-            <p>Specialized recruitment for senior leadership roles.</p>
+            <p>Specialized recruitment for C-suite and senior leadership roles.</p>
         </div>
     </div>
 </section>
 
-<section style="background:#f9f9f9;">
+<!-- Industries -->
+<section id="industries" class="industries-section" style="max-width:100%;">
     <h2>Industries We Serve</h2>
-    <p style="text-align:center;">
-        IT & Technology | Healthcare | Finance | Engineering | Startups
-    </p>
+    <p class="section-subtitle">Deep expertise across high-demand sectors</p>
+    <div class="industry-tags">
+        <span class="industry-tag"><i class="fa-solid fa-laptop-code"></i>&nbsp; IT & Technology</span>
+        <span class="industry-tag"><i class="fa-solid fa-heart-pulse"></i>&nbsp; Healthcare</span>
+        <span class="industry-tag"><i class="fa-solid fa-chart-line"></i>&nbsp; Finance</span>
+        <span class="industry-tag"><i class="fa-solid fa-gears"></i>&nbsp; Engineering</span>
+        <span class="industry-tag"><i class="fa-solid fa-rocket"></i>&nbsp; Startups</span>
+        <span class="industry-tag"><i class="fa-solid fa-building"></i>&nbsp; Real Estate</span>
+    </div>
 </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p style="text-align:center;">
-        Email: your@email.com <br>
-        Phone: +1 000 000 0000 <br>
-        <a href="https://linkedin.com" target="_blank">Visit us on LinkedIn</a>
-    </p>
+<!-- Why Choose Us -->
+<section id="why-us" class="stats-section" style="max-width:100%;">
+    <h2 style="color:white;">Why Choose Us</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.8);">Numbers that speak for themselves</p>
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="number">500+</div>
+            <div class="label">Successful Placements</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">50+</div>
+            <div class="label">Client Partners</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">95%</div>
+            <div class="label">Client Retention Rate</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">10+</div>
+            <div class="label">Years of Experience</div>
+        </div>
+    </div>
 </section>
 
+<!-- Testimonials -->
+<section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <p class="section-subtitle">Trusted by industry leaders</p>
+    <div class="testimonials">
+        <div class="testimonial-card">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <div class="stars">★★★★★</div>
+            <p>"Quantum Info Systems helped us fill critical engineering roles in record time. Their understanding of our culture made all the difference."</p>
+            <div class="author">Priya Sharma</div>
+            <div class="role">VP of Engineering, TechNova Inc.</div>
+        </div>
+        <div class="testimonial-card">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <div class="stars">★★★★★</div>
+            <p>"Professional, responsive, and truly invested in finding the right fit. We've partnered with them for over 3 years and counting."</p>
+            <div class="author">James Carter</div>
+            <div class="role">HR Director, GlobalFinance Ltd.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background: var(--bg-warm); max-width: 100%; border-radius: 0;">
+    <h2>Get In Touch</h2>
+    <p class="section-subtitle">We'd love to hear from you</p>
+    <div class="contact-grid">
+        <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <p><a href="mailto:hr@quantuminfosystems.com">hr@quantuminfosystems.com</a></p>
+        </div>
+        <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <p><a href="tel:+14155550199">+1 (415) 555-0199</a></p>
+        </div>
+        <div class="contact-item">
+            <i class="fa-brands fa-linkedin"></i>
+            <p><a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
 <footer>
-    © 2026 Your Company Name | All Rights Reserved
+    <div class="social-links">
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+    &copy; 2026 Quantum Info Systems. All Rights Reserved.
 </footer>
 
 </body>
