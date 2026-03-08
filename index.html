@@ -4,724 +4,565 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quantum Info Systems | Recruitment & Talent Solutions</title>
-<meta name="description" content="Quantum Info Systems — Connecting top talent with leading companies. Expert recruitment, contract staffing, and executive search services.">
-<meta property="og:title" content="Quantum Info Systems | Recruitment & Talent Solutions">
-<meta property="og:description" content="Expert recruitment, contract staffing, and executive search services.">
-<meta property="og:type" content="website">
-<link rel="icon" href="https://img.icons8.com/fluency/48/combo-chart.png" type="image/png">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Quantum Info Systems — Connecting top talent with leading companies.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root {
-    --primary: #6366f1;
-    --primary-hover: #4f46e5;
-    --primary-light: #eef2ff;
-    --text: #3f3f46;
-    --text-light: #71717a;
-    --heading: #18181b;
-    --bg-warm: #faf8f5;
-    --bg-section: #f5f3ef;
-    --white: #ffffff;
-    --footer-bg: #1e1b4b;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-    --shadow-md: 0 8px 30px rgba(99,102,241,0.08);
-    --shadow-lg: 0 20px 50px rgba(99,102,241,0.12);
-    --radius: 16px;
-    --radius-pill: 50px;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: var(--text);
-    line-height: 1.7;
-    background: var(--white);
-}
-
-/* ─── Navbar (Frosted Glass) ─── */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 48px;
-    box-sizing: border-box;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    transition: box-shadow 0.3s;
-}
-
-nav:hover {
-    box-shadow: var(--shadow-sm);
-}
-
-nav .logo {
-    font-size: 21px;
-    font-weight: 700;
-    color: var(--heading);
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-nav .logo span {
-    color: var(--primary);
-}
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 32px;
-    margin: 0;
-    padding: 0;
-}
-
-nav .nav-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-}
-
-nav .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s;
-    border-radius: 2px;
-}
-
-nav .nav-links a:hover {
-    color: var(--primary);
-}
-
-nav .nav-links a:hover::after {
-    width: 100%;
-}
-
-.hamburger {
-    display: none;
-    font-size: 22px;
-    color: var(--heading);
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-/* ─── Hero ─── */
-header {
-    background: linear-gradient(135deg, rgba(30,27,75,0.82), rgba(99,102,241,0.65)),
-    url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 180px 20px 130px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 52px;
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: -1px;
-    animation: fadeInDown 0.8s ease;
-}
-
-header .tagline {
-    font-size: 18px;
-    margin-top: 16px;
-    opacity: 0.9;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    animation: fadeInUp 0.8s ease;
-}
-
-.hero-buttons {
-    margin-top: 36px;
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeInUp 1s ease;
-}
-
-.btn {
-    display: inline-block;
-    padding: 14px 36px;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--radius-pill);
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.3px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(99,102,241,0.3);
-}
-
-.btn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(99,102,241,0.35);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.6);
-    box-shadow: none;
-}
-
-.btn-outline:hover {
-    background: white;
-    color: var(--primary);
-    border-color: white;
-    box-shadow: 0 8px 25px rgba(255,255,255,0.2);
-}
-
-/* ─── Sections ─── */
-section {
-    padding: 100px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 12px;
-    font-size: 34px;
-    color: var(--heading);
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: var(--text-light);
-    margin-bottom: 50px;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-/* ─── Services ─── */
-.services {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
-}
-
-.card {
-    flex: 1;
-    min-width: 280px;
-    padding: 36px 32px;
-    border-radius: var(--radius);
-    background: var(--white);
-    border: 1px solid rgba(0,0,0,0.04);
-    box-shadow: var(--shadow-md);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), #a78bfa);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-.card .icon-wrap {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    background: var(--primary-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.card .icon-wrap i {
-    font-size: 24px;
-    color: var(--primary);
-}
-
-.card h3 {
-    margin: 0 0 10px;
-    font-size: 19px;
-    color: var(--heading);
-    font-weight: 600;
-}
-
-.card p {
-    margin: 0;
-    color: var(--text-light);
-    font-size: 15px;
-}
-
-/* ─── Stats ─── */
-.stats-section {
-    background: linear-gradient(135deg, #6366f1, #4338ca);
-    color: white;
-    padding: 80px 20px;
-    border-radius: 0;
-}
-
-.stats-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    max-width: 950px;
-    margin: auto;
-}
-
-.stat-item {
-    text-align: center;
-    min-width: 180px;
-    flex: 1;
-    padding: 24px;
-    background: rgba(255,255,255,0.1);
-    border-radius: var(--radius);
-    backdrop-filter: blur(4px);
-    transition: background 0.3s;
-}
-
-.stat-item:hover {
-    background: rgba(255,255,255,0.18);
-}
-
-.stat-item .number {
-    font-size: 44px;
-    font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.stat-item .label {
-    font-size: 14px;
-    opacity: 0.85;
-    margin-top: 6px;
-    font-weight: 300;
-}
-
-/* ─── Industries ─── */
-.industries-section {
-    background: var(--bg-warm);
-    padding: 100px 20px;
-}
-
-.industry-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    justify-content: center;
-    max-width: 800px;
-    margin: auto;
-}
-
-.industry-tag {
-    background: var(--white);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 12px 26px;
-    border-radius: var(--radius-pill);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-    cursor: default;
-}
-
-.industry-tag:hover {
-    background: var(--primary-light);
-    color: var(--primary);
-    border-color: rgba(99,102,241,0.2);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.industry-tag i {
-    color: var(--primary);
-}
-
-/* ─── Testimonials ─── */
-.testimonials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
-}
-
-.testimonial-card {
-    flex: 1;
-    min-width: 300px;
-    background: var(--white);
-    padding: 36px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(0,0,0,0.04);
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.testimonial-card .quote-icon {
-    font-size: 32px;
-    color: var(--primary);
-    opacity: 0.25;
-    margin-bottom: 12px;
-}
-
-.testimonial-card .stars {
-    color: #fbbf24;
-    font-size: 14px;
-    margin-bottom: 14px;
-    letter-spacing: 2px;
-}
-
-.testimonial-card p {
-    font-style: italic;
-    color: var(--text);
-    line-height: 1.8;
-    font-size: 15px;
-    margin: 0;
-}
-
-.testimonial-card .author {
-    margin-top: 20px;
-    font-weight: 600;
-    font-style: normal;
-    color: var(--heading);
-    font-size: 15px;
-}
-
-.testimonial-card .role {
-    font-size: 13px;
-    color: var(--text-light);
-    font-weight: 400;
-}
-
-/* ─── Contact ─── */
-.contact-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.contact-item {
-    text-align: center;
-    min-width: 220px;
-    padding: 30px;
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(0,0,0,0.04);
-    transition: transform 0.3s;
-}
-
-.contact-item:hover {
-    transform: translateY(-4px);
-}
-
-.contact-item i {
-    font-size: 26px;
-    color: var(--primary);
-    margin-bottom: 12px;
-    width: 52px;
-    height: 52px;
-    line-height: 52px;
-    background: var(--primary-light);
-    border-radius: 14px;
-    display: inline-block;
-}
-
-.contact-item p {
-    margin: 10px 0 0;
-}
-
-.contact-item a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.contact-item a:hover {
-    color: var(--primary-hover);
-}
-
-/* ─── Footer ─── */
-footer {
-    background: var(--footer-bg);
-    color: rgba(255,255,255,0.6);
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 14px;
-}
-
-footer .social-links {
-    margin-bottom: 16px;
-}
-
-footer .social-links a {
-    color: rgba(255,255,255,0.5);
-    font-size: 20px;
-    margin: 0 12px;
-    transition: all 0.3s;
-}
-
-footer .social-links a:hover {
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* ─── Animations ─── */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-25px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ─── Responsive ─── */
-@media (max-width: 768px) {
-    header {
-        padding: 140px 20px 100px;
-    }
-
-    header h1 {
-        font-size: 34px;
-    }
-
-    header .tagline {
-        font-size: 15px;
-    }
-
-    nav {
-        padding: 14px 20px;
-    }
-
-    nav .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 62px;
-        right: 16px;
-        background: rgba(255,255,255,0.97);
-        backdrop-filter: blur(16px);
-        padding: 20px 28px;
-        border-radius: 14px;
-        gap: 14px;
-        box-shadow: var(--shadow-lg);
-        border: 1px solid rgba(0,0,0,0.06);
-    }
-
-    nav .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    section {
-        padding: 70px 16px;
-    }
-
-    .stat-item .number {
-        font-size: 32px;
-    }
-
-    .stats-section, .industries-section {
-        padding: 70px 16px;
-    }
+  --navy:     #1a3a5c;
+  --blue:     #2a6496;
+  --blue-lt:  #5ba8d4;
+  --blue-tint:#eef6fb;
+  --blue-rule:#d0e8f5;
+  --text:     #2d3748;
+  --text-lt:  #718096;
+  --text-xs:  #a0aec0;
+  --white:    #ffffff;
+  --off:      #f9fbfd;
+  --border:   #e8f0f7;
+  --r:        12px;
+  --pill:     999px;
+  --sh:       0 2px 16px rgba(42,100,150,0.08);
+  --sh-md:    0 8px 32px rgba(42,100,150,0.12);
+  --sh-lg:    0 20px 60px rgba(42,100,150,0.16);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--text);background:var(--white);line-height:1.7;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  height:72px;padding:0 56px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:0 2px 24px rgba(26,58,92,0.09)}
+
+/* ── LOGO LOCKUP ── */
+.logo-lockup{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo-lockup .logo-svg{width:44px;height:44px;flex-shrink:0}
+.logo-lockup .logo-words{display:flex;flex-direction:column;justify-content:center;line-height:1.15}
+.logo-lockup .logo-main{
+  font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;
+  color:var(--navy);letter-spacing:-0.3px;
+}
+.logo-lockup .logo-sub{
+  font-family:'Poppins',sans-serif;font-size:9.5px;font-weight:500;
+  color:var(--blue-lt);letter-spacing:2.5px;text-transform:uppercase;
+}
+
+/* footer variant — words go white */
+.logo-lockup.light .logo-main{color:#fff}
+.logo-lockup.light .logo-sub{color:rgba(255,255,255,0.45)}
+
+.nav-links{list-style:none;display:flex;align-items:center;gap:2px}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--text-lt);text-decoration:none;padding:7px 15px;border-radius:8px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--blue);background:var(--blue-tint)}
+.nav-cta{background:var(--navy)!important;color:#fff!important;padding:9px 24px!important;border-radius:var(--pill)!important;font-weight:600!important;margin-left:6px;transition:background .2s,transform .2s!important}
+.nav-cta:hover{background:var(--blue)!important;transform:translateY(-1px)}
+.hamburger{display:none;background:none;border:none;font-size:20px;color:var(--navy);cursor:pointer}
+
+/* ── HERO ── */
+header{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:120px 24px 80px;
+  position:relative;overflow:hidden;
+  background: linear-gradient(175deg, #dff0fa 0%, #eef6fb 30%, #f6fafd 60%, #ffffff 100%);
+}
+header::before{
+  content:'';position:absolute;top:-160px;left:50%;transform:translateX(-50%);
+  width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(91,168,212,0.13) 0%,transparent 68%);
+  pointer-events:none;
+}
+header::after{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(#b8ddf2 1px,transparent 1px);
+  background-size:28px 28px;opacity:0.35;pointer-events:none;
+}
+.hero-content{position:relative;z-index:2;max-width:740px}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.85);border:1px solid var(--blue-rule);
+  color:var(--blue);padding:7px 18px;border-radius:var(--pill);
+  font-size:11.5px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;
+  margin-bottom:30px;animation:fadeUp .5s ease both;
+  box-shadow:0 2px 10px rgba(42,100,150,0.07);
+}
+.hero-eyebrow i{font-size:10px;color:var(--blue-lt)}
+
+header h1{
+  font-size:clamp(34px,5.5vw,62px);color:var(--navy);
+  font-weight:700;line-height:1.1;letter-spacing:-1.5px;
+  margin-bottom:22px;animation:fadeUp .6s .1s ease both;
+}
+.grad-text{
+  background:linear-gradient(135deg,var(--blue-lt),var(--blue));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  font-size:16.5px;color:var(--text-lt);font-weight:300;
+  max-width:480px;margin:0 auto 40px;line-height:1.9;
+  animation:fadeUp .6s .2s ease both;
+}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s .3s ease both}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:var(--pill);font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:all .25s;border:2px solid transparent;cursor:pointer}
+.btn-solid{background:var(--navy);color:#fff;box-shadow:0 4px 16px rgba(26,58,92,0.22)}
+.btn-solid:hover{background:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,100,150,0.28)}
+.btn-outline{background:rgba(255,255,255,0.8);border-color:var(--blue-rule);color:var(--navy)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);background:white;transform:translateY(-2px)}
+
+.hero-trust{
+  display:flex;justify-content:center;gap:44px;flex-wrap:wrap;
+  margin-top:64px;padding-top:36px;border-top:1px solid var(--blue-rule);
+  animation:fadeUp .6s .5s ease both;position:relative;z-index:2;
+}
+.trust-item{text-align:center}
+.trust-num{font-size:25px;font-weight:700;color:var(--navy);letter-spacing:-0.5px;line-height:1}
+.trust-num span{color:var(--blue)}
+.trust-lbl{font-size:11.5px;color:var(--text-xs);margin-top:3px;font-weight:400}
+
+.hero-scroll{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);color:var(--blue-rule);font-size:17px;animation:bob 2s infinite;z-index:2}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+section.alt{background:var(--off)}
+.section-tag{display:block;text-align:center;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-weight:700;letter-spacing:-0.8px;line-height:1.2;margin-bottom:12px}
+.sub{text-align:center;font-size:15px;color:var(--text-lt);font-weight:300;max-width:460px;margin:0 auto 52px;line-height:1.85}
+.rule{display:block;width:36px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--blue-lt),var(--blue));margin:14px auto 48px}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:30px 26px;box-shadow:var(--sh);transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh-md);border-color:var(--blue-rule)}
+.card-ico{width:46px;height:46px;border-radius:12px;background:var(--blue-tint);border:1px solid var(--blue-rule);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.card-ico i{font-size:19px;color:var(--blue)}
+.card h3{font-size:15.5px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--text-lt);line-height:1.75;font-weight:300}
+
+/* ── PROCESS ── */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:52px}
+.process-grid::before{content:'';position:absolute;top:27px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,var(--blue-lt),var(--blue),var(--blue-lt))}
+.step{text-align:center;padding:0 18px;position:relative}
+.step-dot{width:54px;height:54px;border-radius:50%;background:var(--white);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;position:relative;z-index:1;transition:background .3s,transform .3s}
+.step:hover .step-dot{background:var(--blue);transform:scale(1.08)}
+.step-dot span{font-size:14px;font-weight:700;color:var(--blue);transition:color .3s}
+.step:hover .step-dot span{color:#fff}
+.step h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:7px}
+.step p{font-size:13px;color:var(--text-lt);line-height:1.7;font-weight:300}
+
+/* ── STATS ── */
+.stats-band{background:linear-gradient(135deg,var(--navy) 0%,#1e4d74 100%);padding:80px 0}
+.stats-band h2{color:#fff}
+.stats-band .sub{color:rgba(255,255,255,0.5)}
+.stats-band .section-tag{color:var(--blue-lt)}
+.stats-band .rule{background:linear-gradient(90deg,rgba(91,168,212,.4),rgba(91,168,212,.8))}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:var(--r);overflow:hidden;margin-top:48px}
+.stat-cell{background:transparent;padding:36px 20px;text-align:center;transition:background .3s}
+.stat-cell:hover{background:rgba(255,255,255,.05)}
+.stat-big{font-size:44px;font-weight:700;color:#fff;letter-spacing:-2px;line-height:1}
+.stat-big sup{font-size:20px;color:var(--blue-lt);vertical-align:super}
+.stat-desc{font-size:12.5px;color:rgba(255,255,255,.45);margin-top:8px;font-weight:300}
+
+/* ── INDUSTRIES ── */
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ind-card{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh);transition:all .25s;cursor:default}
+.ind-card:hover{border-color:var(--blue);background:var(--blue-tint);transform:translateX(4px)}
+.ind-ico{width:38px;height:38px;border-radius:9px;background:var(--blue-tint);border:1px solid var(--blue-rule);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ind-ico i{font-size:16px;color:var(--blue)}
+.ind-name{font-size:13.5px;font-weight:600;color:var(--navy)}
+.ind-sub{font-size:11.5px;color:var(--text-xs);font-weight:300;margin-top:1px}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.tcard{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:34px;box-shadow:var(--sh);transition:box-shadow .3s,transform .3s;position:relative}
+.tcard::before{content:'"';font-family:Georgia,serif;font-size:72px;line-height:1;color:var(--blue-rule);position:absolute;top:16px;right:24px}
+.tcard:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
+.stars{color:#f4b942;font-size:12.5px;letter-spacing:2px;margin-bottom:12px}
+.tcard blockquote{font-size:14px;color:var(--text);line-height:1.85;font-style:italic;font-weight:300;margin-bottom:22px}
+.tauthor{display:flex;align-items:center;gap:11px}
+.tavatar{width:40px;height:40px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--blue-lt),var(--blue));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff}
+.tname{font-size:13.5px;font-weight:600;color:var(--navy)}
+.trole{font-size:11.5px;color:var(--text-xs);font-weight:300;margin-top:1px}
+
+/* ── CONTACT ── */
+.contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:44px;align-items:start}
+.cinfo{display:flex;flex-direction:column;gap:12px}
+.cinfo-item{display:flex;align-items:flex-start;gap:13px;padding:18px 20px;background:var(--off);border:1px solid var(--border);border-radius:var(--r);transition:border-color .2s,background .2s}
+.cinfo-item:hover{border-color:var(--blue-rule);background:var(--blue-tint)}
+.ci-ico{width:36px;height:36px;border-radius:9px;background:var(--blue-tint);border:1px solid var(--blue-rule);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-ico i{font-size:14px;color:var(--blue)}
+.ci-lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-xs);margin-bottom:2px}
+.ci-val{font-size:13.5px;color:var(--navy);font-weight:500}
+.ci-val a{color:var(--navy);text-decoration:none}
+.ci-val a:hover{color:var(--blue)}
+
+.cform{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:38px 34px;box-shadow:var(--sh-md)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fg{margin-bottom:15px}
+.fg label{display:block;font-size:12px;font-weight:600;color:var(--navy);margin-bottom:5px;letter-spacing:.2px}
+.fg input,.fg select,.fg textarea{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:9px;font-family:'Poppins',sans-serif;font-size:13px;color:var(--text);background:var(--off);outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue-lt);box-shadow:0 0 0 3px rgba(91,168,212,.12);background:#fff}
+.fg textarea{resize:vertical;min-height:96px}
+.fg select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%23718096' d='M5 6L0 0h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-color:var(--off)}
+.submit-btn{width:100%;margin-top:4px}
+.form-note{text-align:center;font-size:11.5px;color:var(--text-xs);margin-top:9px}
+.form-success{display:none;text-align:center;padding:32px 12px}
+.form-success i{font-size:42px;color:var(--blue);display:block;margin-bottom:12px}
+.form-success h4{font-size:17px;color:var(--navy);font-weight:600;margin-bottom:5px}
+.form-success p{font-size:13px;color:var(--text-lt);font-weight:300}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:58px 0 34px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.fbrand p{font-size:12.5px;color:rgba(255,255,255,.38);line-height:1.8;max-width:230px;font-weight:300;margin-top:14px}
+.fcol h5{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:15px}
+.fcol ul{list-style:none}
+.fcol ul li{margin-bottom:9px}
+.fcol ul li a{font-size:13px;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s;font-weight:300}
+.fcol ul li a:hover{color:rgba(255,255,255,.85)}
+.footer-line{border:none;border-top:1px solid rgba(255,255,255,.07);margin-bottom:26px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.22)}
+.socials{display:flex;gap:8px}
+.socials a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.32);font-size:13px;text-decoration:none;transition:all .2s}
+.socials a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff;transform:translateY(-2px)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 24px}
+  .services-grid,.ind-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .process-grid::before{display:none}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .contact-layout{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  nav{height:64px}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:10px 0;border-bottom:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.07)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:13px 22px;border-radius:0;font-size:14px}
+  .nav-cta{margin:8px 14px;border-radius:var(--pill)!important;text-align:center;display:block}
+  .hamburger{display:block}
+  .services-grid,.ind-grid,.process-grid,.stats-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .cform{padding:22px 16px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  section{padding:70px 0}
 }
 </style>
 </head>
-
 <body>
 
-<!-- Navbar -->
-<nav>
-    <a href="#" class="logo">Quantum<span>Info</span></a>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Toggle menu">
-        <i class="fa fa-bars"></i>
-    </button>
+<script>
+const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="dna-top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5ba8d4"/>
+      <stop offset="100%" stop-color="#2a6496"/>
+    </linearGradient>
+    <linearGradient id="dna-bot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a6496"/>
+      <stop offset="100%" stop-color="#5ba8d4"/>
+    </linearGradient>
+    <linearGradient id="orbit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5ba8d4" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2a6496" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="100" rx="62" ry="22" stroke="url(#orbit-grad)" stroke-width="2.5" fill="none" opacity="0.75"/>
+  <ellipse cx="100" cy="100" rx="62" ry="22" stroke="url(#orbit-grad)" stroke-width="2.5" fill="none" opacity="0.75" transform="rotate(60 100 100)"/>
+  <ellipse cx="100" cy="100" rx="62" ry="22" stroke="url(#orbit-grad)" stroke-width="2.5" fill="none" opacity="0.75" transform="rotate(-60 100 100)"/>
+  <path d="M 84 28 C 72 50, 112 72, 100 94 C 88 116, 72 130, 84 172" stroke="url(#dna-top)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <path d="M 116 28 C 128 50, 88 72, 100 94 C 112 116, 128 130, 116 172" stroke="url(#dna-bot)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <line x1="88"  y1="42"  x2="112" y2="38"  stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="93"  y1="57"  x2="107" y2="58"  stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="103" y1="71"  x2="97"  y2="74"  stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="100" y1="86"  x2="100" y2="90"  stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="97"  y1="102" x2="103" y2="106" stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="93"  y1="118" x2="107" y2="122" stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="88"  y1="134" x2="112" y2="138" stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="88"  y1="150" x2="112" y2="154" stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="90"  y1="165" x2="110" y2="163" stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="84"  cy="28"  r="4"   fill="#5ba8d4"/>
+  <circle cx="86"  cy="60"  r="3.5" fill="#3d8fc0"/>
+  <circle cx="94"  cy="94"  r="3.5" fill="#2a6496"/>
+  <circle cx="88"  cy="130" r="3.5" fill="#3d8fc0"/>
+  <circle cx="84"  cy="172" r="4"   fill="#5ba8d4"/>
+  <circle cx="116" cy="28"  r="4"   fill="#5ba8d4"/>
+  <circle cx="114" cy="60"  r="3.5" fill="#3d8fc0"/>
+  <circle cx="106" cy="94"  r="3.5" fill="#2a6496"/>
+  <circle cx="112" cy="130" r="3.5" fill="#3d8fc0"/>
+  <circle cx="116" cy="172" r="4"   fill="#5ba8d4"/>
+  <circle cx="100" cy="100" r="7"   fill="url(#dna-top)"/>
+  <circle cx="100" cy="100" r="3.5" fill="#fff" opacity="0.9"/>
+</svg>`;
+</script>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="logo-lockup" id="navLogo">
+    <div class="logo-svg"></div>
+    <div class="logo-words">
+      <span class="logo-main">QuantumInfo Systems</span>
+      <span class="logo-sub">Talent Solutions</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa fa-bars"></i></button>
 </nav>
 
-<!-- Hero -->
+<!-- HERO -->
 <header>
-    <h1>Quantum Info Systems</h1>
-    <p class="tagline">Connecting Top Talent With Leading Companies</p>
-    <div class="hero-buttons">
-        <a href="#contact" class="btn">Hire Talent</a>
-        <a href="#contact" class="btn btn-outline">Looking for a Job?</a>
+  <div class="hero-content">
+    <div id="heroMark" style="margin:0 auto 28px;width:80px;height:80px;animation:fadeUp .4s ease both;position:relative;z-index:2"></div>
+    <div class="hero-eyebrow">
+      <i class="fa-solid fa-circle-check"></i>
+      Trusted by 50+ companies across North America
     </div>
+    <h1>Connecting <span class="grad-text">Top Talent</span><br>With Leading Companies</h1>
+    <p class="hero-sub">We bridge the gap between exceptional professionals and the organizations that need them — faster, smarter, better.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-solid"><i class="fa-solid fa-briefcase"></i> Hire Talent</a>
+      <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-magnifying-glass"></i> Find a Role</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="trust-num">100<span>+</span></div><div class="trust-lbl">Placements Made</div></div>
+      <div class="trust-item"><div class="trust-num">95<span>%</span></div><div class="trust-lbl">Client Retention</div></div>
+      <div class="trust-item"><div class="trust-num">48<span>h</span></div><div class="trust-lbl">Avg. First Shortlist</div></div>
+      <div class="trust-item"><div class="trust-num">3<span>+</span></div><div class="trust-lbl">Years Experience</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><i class="fa-solid fa-chevron-down"></i></div>
 </header>
 
-<!-- Services -->
+<!-- SERVICES -->
 <section id="services">
-    <h2>Our Services</h2>
-    <p class="section-subtitle">Tailored recruitment solutions to power your growth</p>
-    <div class="services">
-        <div class="card">
-            <div class="icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
-            <h3>Permanent Recruitment</h3>
-            <p>End-to-end hiring solutions for long-term placements across all levels.</p>
-        </div>
-        <div class="card">
-            <div class="icon-wrap"><i class="fa-solid fa-clock"></i></div>
-            <h3>Contract Staffing</h3>
-            <p>Flexible workforce solutions for short and long-term project needs.</p>
-        </div>
-        <div class="card">
-            <div class="icon-wrap"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-            <h3>Executive Search</h3>
-            <p>Specialized recruitment for C-suite and senior leadership roles.</p>
-        </div>
+  <div class="wrap">
+    <span class="section-tag reveal">What We Do</span>
+    <h2 class="reveal">Our Services</h2>
+    <span class="rule reveal"></span>
+    <div class="services-grid">
+      <div class="card reveal"><div class="card-ico"><i class="fa-solid fa-user-tie"></i></div><h3>Permanent Recruitment</h3><p>End-to-end hiring for long-term placements across all levels — from junior hires to senior leadership.</p></div>
+      <div class="card reveal"><div class="card-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><h3>Contract Staffing</h3><p>Flexible workforce solutions for short and long-term projects. Skilled professionals on-demand, exactly when you need them.</p></div>
+      <div class="card reveal"><div class="card-ico"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>Executive Search</h3><p>Confidential, high-touch search for C-suite and VP-level roles. Leaders who shape cultures, not just fill a seat.</p></div>
+      <div class="card reveal"><div class="card-ico"><i class="fa-solid fa-people-arrows"></i></div><h3>RPO Solutions</h3><p>Recruitment Process Outsourcing for companies scaling fast. We embed and manage hiring at volume.</p></div>
+      <div class="card reveal"><div class="card-ico"><i class="fa-solid fa-chart-bar"></i></div><h3>Talent Strategy</h3><p>Advisory services to build smarter hiring pipelines, employer branding, and retention frameworks.</p></div>
+      <div class="card reveal"><div class="card-ico"><i class="fa-solid fa-globe"></i></div><h3>Global Sourcing</h3><p>International talent pools across time zones. We handle compliance, vetting, and onboarding for remote teams.</p></div>
     </div>
+  </div>
 </section>
 
-<!-- Industries -->
-<section id="industries" class="industries-section" style="max-width:100%;">
-    <h2>Industries We Serve</h2>
-    <p class="section-subtitle">Deep expertise across high-demand sectors</p>
-    <div class="industry-tags">
-        <span class="industry-tag"><i class="fa-solid fa-laptop-code"></i>&nbsp; IT & Technology</span>
-        <span class="industry-tag"><i class="fa-solid fa-heart-pulse"></i>&nbsp; Healthcare</span>
-        <span class="industry-tag"><i class="fa-solid fa-chart-line"></i>&nbsp; Finance</span>
-        <span class="industry-tag"><i class="fa-solid fa-gears"></i>&nbsp; Engineering</span>
-        <span class="industry-tag"><i class="fa-solid fa-rocket"></i>&nbsp; Startups</span>
-        <span class="industry-tag"><i class="fa-solid fa-building"></i>&nbsp; Real Estate</span>
+<!-- HOW IT WORKS -->
+<section id="process" class="alt">
+  <div class="wrap">
+    <span class="section-tag reveal">Our Process</span>
+    <h2 class="reveal">How It Works</h2>
+    <span class="rule reveal"></span>
+    <div class="process-grid">
+      <div class="step reveal"><div class="step-dot"><span>01</span></div><h4>Discovery Call</h4><p>We learn your business, culture, role requirements, and timeline in depth.</p></div>
+      <div class="step reveal"><div class="step-dot"><span>02</span></div><h4>Talent Mapping</h4><p>We source candidates matched precisely to your brief from our network.</p></div>
+      <div class="step reveal"><div class="step-dot"><span>03</span></div><h4>Shortlist & Present</h4><p>Vetted, interview-ready candidates delivered within 48 hours.</p></div>
+      <div class="step reveal"><div class="step-dot"><span>04</span></div><h4>Hire & Support</h4><p>We manage offers, onboarding, and follow up post-placement for lasting fit.</p></div>
     </div>
+  </div>
 </section>
 
-<!-- Why Choose Us -->
-<section id="why-us" class="stats-section" style="max-width:100%;">
-    <h2 style="color:white;">Why Choose Us</h2>
-    <p class="section-subtitle" style="color:rgba(255,255,255,0.8);">Numbers that speak for themselves</p>
+<!-- STATS -->
+<div class="stats-band" id="why-us">
+  <div class="wrap">
+    <span class="section-tag">By the Numbers</span>
+    <h2>Why Choose Us</h2>
+    <span class="rule"></span>
     <div class="stats-grid">
-        <div class="stat-item">
-            <div class="number">500+</div>
-            <div class="label">Successful Placements</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">50+</div>
-            <div class="label">Client Partners</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">95%</div>
-            <div class="label">Client Retention Rate</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">10+</div>
-            <div class="label">Years of Experience</div>
-        </div>
+      <div class="stat-cell reveal"><div class="stat-big">100<sup>+</sup></div><div class="stat-desc">Successful Placements</div></div>
+      <div class="stat-cell reveal"><div class="stat-big">20<sup>+</sup></div><div class="stat-desc">Client Partners</div></div>
+      <div class="stat-cell reveal"><div class="stat-big">95<sup>%</sup></div><div class="stat-desc">Client Retention Rate</div></div>
+      <div class="stat-cell reveal"><div class="stat-big">3<sup>+</sup></div><div class="stat-desc">Years of Experience</div></div>
     </div>
+  </div>
+</div>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="wrap">
+    <span class="section-tag reveal">Sectors</span>
+    <h2 class="reveal">Industries We Serve</h2>
+    <span class="rule reveal"></span>
+    <div class="ind-grid">
+      <div class="ind-card reveal"><div class="ind-ico"><i class="fa-solid fa-laptop-code"></i></div><div><div class="ind-name">IT & Technology</div><div class="ind-sub">Software, DevOps, Cloud, AI/ML</div></div></div>
+      <div class="ind-card reveal"><div class="ind-ico"><i class="fa-solid fa-heart-pulse"></i></div><div><div class="ind-name">Healthcare</div><div class="ind-sub">Clinical, MedTech, Life Sciences</div></div></div>
+      <div class="ind-card reveal"><div class="ind-ico"><i class="fa-solid fa-chart-line"></i></div><div><div class="ind-name">Finance</div><div class="ind-sub">Banking, FinTech, Accounting</div></div></div>
+      <div class="ind-card reveal"><div class="ind-ico"><i class="fa-solid fa-gears"></i></div><div><div class="ind-name">Engineering</div><div class="ind-sub">Civil, Mechanical, Electrical</div></div></div>
+      <div class="ind-card reveal"><div class="ind-ico"><i class="fa-solid fa-rocket"></i></div><div><div class="ind-name">Startups</div><div class="ind-sub">Seed to Series C talent scaling</div></div></div>
+      <div class="ind-card reveal"><div class="ind-ico"><i class="fa-solid fa-building"></i></div><div><div class="ind-name">Real Estate</div><div class="ind-sub">Commercial, PropTech, Operations</div></div></div>
+    </div>
+  </div>
 </section>
 
-<!-- Testimonials -->
-<section id="testimonials">
-    <h2>What Our Clients Say</h2>
-    <p class="section-subtitle">Trusted by industry leaders</p>
-    <div class="testimonials">
-        <div class="testimonial-card">
-            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-            <div class="stars">★★★★★</div>
-            <p>"Quantum Info Systems helped us fill critical engineering roles in record time. Their understanding of our culture made all the difference."</p>
-            <div class="author">Priya Sharma</div>
-            <div class="role">VP of Engineering, TechNova Inc.</div>
-        </div>
-        <div class="testimonial-card">
-            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-            <div class="stars">★★★★★</div>
-            <p>"Professional, responsive, and truly invested in finding the right fit. We've partnered with them for over 3 years and counting."</p>
-            <div class="author">James Carter</div>
-            <div class="role">HR Director, GlobalFinance Ltd.</div>
-        </div>
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="alt">
+  <div class="wrap">
+    <span class="section-tag reveal">Client Stories</span>
+    <h2 class="reveal">What Our Clients Say</h2>
+    <span class="rule reveal"></span>
+    <div class="testi-grid">
+      <div class="tcard reveal"><div class="stars">★★★★★</div><blockquote>"Quantum Info Systems helped us fill critical engineering roles in record time. Their understanding of our culture made all the difference — every hire has been a long-term keeper."</blockquote><div class="tauthor"><div class="tavatar">P</div><div><div class="tname">Priya Sharma</div><div class="trole">VP of Engineering, TechNova Inc.</div></div></div></div>
+      <div class="tcard reveal"><div class="stars">★★★★★</div><blockquote>"Professional, responsive, and truly invested in finding the right fit. We've partnered with them for over 3 years. They feel like an extension of our own HR team."</blockquote><div class="tauthor"><div class="tavatar">J</div><div><div class="tname">James Carter</div><div class="trole">HR Director, GlobalFinance Ltd.</div></div></div></div>
+      <div class="tcard reveal"><div class="stars">★★★★★</div><blockquote>"We needed a CTO fast during a critical growth phase. Quantum delivered three exceptional candidates within a week. We made our hire in 12 days — unbelievable turnaround."</blockquote><div class="tauthor"><div class="tavatar">A</div><div><div class="tname">Amir Hassan</div><div class="trole">CEO, Helios Ventures</div></div></div></div>
+      <div class="tcard reveal"><div class="stars">★★★★★</div><blockquote>"Their healthcare division placed 14 clinical specialists across three states — all vetted, credentialed, and excellent. Remarkable consistency every single time."</blockquote><div class="tauthor"><div class="tavatar">S</div><div><div class="tname">Sarah Nguyen</div><div class="trole">COO, MedBridge Health Systems</div></div></div></div>
     </div>
+  </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" style="background: var(--bg-warm); max-width: 100%; border-radius: 0;">
-    <h2>Get In Touch</h2>
-    <p class="section-subtitle">We'd love to hear from you</p>
-    <div class="contact-grid">
-        <div class="contact-item">
-            <i class="fa-solid fa-envelope"></i>
-            <p><a href="mailto:hr@quantuminfosystems.com">hr@quantuminfosystems.com</a></p>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <span class="section-tag reveal">Get In Touch</span>
+    <h2 class="reveal">Let's Work Together</h2>
+    <span class="rule reveal"></span>
+    <div class="contact-layout">
+      <div class="cinfo reveal">
+        <div class="cinfo-item"><div class="ci-ico"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="mailto:hr@quantuminfosystems.com">hr@quantuminfosystems.com</a></div></div></div>
+        <div class="cinfo-item"><div class="ci-ico"><i class="fa-solid fa-phone"></i></div><div><div class="ci-lbl">Phone</div><div class="ci-val"><a href="tel:+14155550199">+1 (415) 555-0199</a></div></div></div>
+        <div class="cinfo-item"><div class="ci-ico"><i class="fa-brands fa-linkedin"></i></div><div><div class="ci-lbl">LinkedIn</div><div class="ci-val"><a href="https://linkedin.com" target="_blank">linkedin.com/company/quantuminfosystems</a></div></div></div>
+        <div class="cinfo-item"><div class="ci-ico"><i class="fa-solid fa-clock"></i></div><div><div class="ci-lbl">Response Time</div><div class="ci-val">Within 24 business hours</div></div></div>
+      </div>
+      <div class="cform reveal">
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="fg"><label>First Name</label><input type="text" placeholder="Jane" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+          </div>
+          <div class="fg"><label>Work Email</label><input type="email" placeholder="jane@company.com" required></div>
+          <div class="fg"><label>I'm looking to…</label><select><option value="">Select an option</option><option>Hire talent for my company</option><option>Find a job or new role</option><option>Learn about Executive Search</option><option>Explore RPO / outsourcing</option><option>Something else</option></select></div>
+          <div class="fg"><label>Message</label><textarea placeholder="Tell us about your needs…"></textarea></div>
+          <button type="submit" class="btn btn-solid submit-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          <p class="form-note"><i class="fa-solid fa-lock"></i> Your information is never shared.</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <i class="fa-solid fa-circle-check"></i>
+          <h4>Message Sent!</h4>
+          <p>Thanks for reaching out — we'll be in touch within one business day.</p>
         </div>
-        <div class="contact-item">
-            <i class="fa-solid fa-phone"></i>
-            <p><a href="tel:+14155550199">+1 (415) 555-0199</a></p>
-        </div>
-        <div class="contact-item">
-            <i class="fa-brands fa-linkedin"></i>
-            <p><a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></p>
-        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-    <div class="social-links">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="fbrand">
+        <a href="#" class="logo-lockup light" id="footerLogo">
+          <div class="logo-svg" style="width:38px;height:38px"></div>
+          <div class="logo-words">
+            <span class="logo-main">QuantumInfo Systems</span>
+            <span class="logo-sub">Talent Solutions</span>
+          </div>
+        </a>
+        <p>Connecting exceptional professionals with the organizations that need them most — since 2023.</p>
+      </div>
+      <div class="fcol"><h5>Services</h5><ul><li><a href="#services">Permanent Recruitment</a></li><li><a href="#services">Contract Staffing</a></li><li><a href="#services">Executive Search</a></li><li><a href="#services">RPO Solutions</a></li><li><a href="#services">Talent Strategy</a></li></ul></div>
+      <div class="fcol"><h5>Industries</h5><ul><li><a href="#industries">IT & Technology</a></li><li><a href="#industries">Healthcare</a></li><li><a href="#industries">Finance</a></li><li><a href="#industries">Engineering</a></li><li><a href="#industries">Startups</a></li></ul></div>
+      <div class="fcol"><h5>Company</h5><ul><li><a href="#why-us">About Us</a></li><li><a href="#testimonials">Client Stories</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+    </div>
+    <hr class="footer-line">
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Quantum Info Systems. All Rights Reserved.</span>
+      <div class="socials">
         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
         <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      </div>
     </div>
-    &copy; 2026 Quantum Info Systems. All Rights Reserved.
+  </div>
 </footer>
 
+<script>
+// Stamp SVG logo into every .logo-svg slot
+document.querySelectorAll('.logo-svg').forEach(el => {
+  el.innerHTML = LOGO_SVG;
+  const svg = el.querySelector('svg');
+  if (svg) { svg.style.width = '100%'; svg.style.height = '100%'; }
+});
+
+// Hero mark
+const heroMark = document.getElementById('heroMark');
+if (heroMark) {
+  heroMark.innerHTML = LOGO_SVG;
+  const svg = heroMark.querySelector('svg');
+  if (svg) { svg.style.width = '100%'; svg.style.height = '100%'; }
+}
+
+// Footer logo: lighten orbits for dark bg
+const footerSvg = document.querySelector('#footerLogo .logo-svg svg');
+if (footerSvg) {
+  footerSvg.querySelectorAll('ellipse').forEach(e => {
+    e.setAttribute('stroke', 'rgba(255,255,255,0.5)');
+  });
+}
+
+// Scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 65);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Nav shadow on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', scrollY > 10);
+});
+
+// Hamburger
+const hb = document.getElementById('hamburger');
+const nl = document.getElementById('navLinks');
+hb.addEventListener('click', () => {
+  nl.classList.toggle('open');
+  hb.innerHTML = nl.classList.contains('open')
+    ? '<i class="fa fa-xmark"></i>' : '<i class="fa fa-bars"></i>';
+});
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+  nl.classList.remove('open');
+  hb.innerHTML = '<i class="fa fa-bars"></i>';
+}));
+
+// Contact form
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
 </body>
 </html>
