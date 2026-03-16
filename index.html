@@ -7,132 +7,60 @@
 <meta name="description" content="Quantum Info Systems — Connecting top talent with leading companies.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
-:root {
-  --navy:     #1a3a5c;
-  --blue:     #2a6496;
-  --blue-lt:  #5ba8d4;
-  --blue-tint:#eef6fb;
-  --blue-rule:#d0e8f5;
-  --text:     #2d3748;
-  --text-lt:  #718096;
-  --text-xs:  #a0aec0;
-  --white:    #ffffff;
-  --off:      #f9fbfd;
-  --border:   #e8f0f7;
-  --r:        12px;
-  --pill:     999px;
-  --sh:       0 2px 16px rgba(42,100,150,0.08);
-  --sh-md:    0 8px 32px rgba(42,100,150,0.12);
-  --sh-lg:    0 20px 60px rgba(42,100,150,0.16);
-}
-
+:root{--navy:#1a3a5c;--blue:#2a6496;--blue-lt:#5ba8d4;--blue-tint:#eef6fb;--blue-rule:#d0e8f5;--text:#2d3748;--text-lt:#718096;--text-xs:#a0aec0;--white:#ffffff;--off:#f9fbfd;--border:#e8f0f7;--r:12px;--pill:999px;--sh:0 2px 16px rgba(42,100,150,0.08);--sh-md:0 8px 32px rgba(42,100,150,0.12);--sh-lg:0 20px 60px rgba(42,100,150,0.16)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Poppins',sans-serif;color:var(--text);background:var(--white);line-height:1.7;overflow-x:hidden}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:rgba(255,255,255,0.97);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  height:72px;padding:0 56px;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:box-shadow .3s;
-}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 2px 24px rgba(26,58,92,0.09)}
-
-/* ── LOGO LOCKUP ── */
 .logo-lockup{display:flex;align-items:center;gap:11px;text-decoration:none}
 .logo-lockup .logo-svg{width:44px;height:44px;flex-shrink:0}
 .logo-lockup .logo-words{display:flex;flex-direction:column;justify-content:center;line-height:1.15}
-.logo-lockup .logo-main{
-  font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;
-  color:var(--navy);letter-spacing:-0.3px;
-}
-.logo-lockup .logo-sub{
-  font-family:'Poppins',sans-serif;font-size:9.5px;font-weight:500;
-  color:var(--blue-lt);letter-spacing:2.5px;text-transform:uppercase;
-}
-
-/* footer variant — words go white */
+.logo-lockup .logo-main{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;color:var(--navy);letter-spacing:-0.3px}
+.logo-lockup .logo-sub{font-family:'Poppins',sans-serif;font-size:9.5px;font-weight:500;color:var(--blue-lt);letter-spacing:2.5px;text-transform:uppercase}
 .logo-lockup.light .logo-main{color:#fff}
 .logo-lockup.light .logo-sub{color:rgba(255,255,255,0.45)}
-
 .nav-links{list-style:none;display:flex;align-items:center;gap:2px}
 .nav-links a{font-size:13.5px;font-weight:500;color:var(--text-lt);text-decoration:none;padding:7px 15px;border-radius:8px;transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--blue);background:var(--blue-tint)}
 .nav-cta{background:var(--navy)!important;color:#fff!important;padding:9px 24px!important;border-radius:var(--pill)!important;font-weight:600!important;margin-left:6px;transition:background .2s,transform .2s!important}
 .nav-cta:hover{background:var(--blue)!important;transform:translateY(-1px)}
+
+/* NEW: Team Login button in nav */
+.nav-login{background:transparent!important;color:var(--blue)!important;border:1.5px solid var(--blue-rule)!important;padding:7px 18px!important;border-radius:var(--pill)!important;font-weight:600!important;font-size:13px!important;display:inline-flex;align-items:center;gap:7px;transition:all .2s!important}
+.nav-login:hover{background:var(--blue-tint)!important;border-color:var(--blue)!important;transform:translateY(-1px)}
+.nav-login i{font-size:11px}
+
 .hamburger{display:none;background:none;border:none;font-size:20px;color:var(--navy);cursor:pointer}
 
-/* ── HERO ── */
-header{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:120px 24px 80px;
-  position:relative;overflow:hidden;
-  background: linear-gradient(175deg, #dff0fa 0%, #eef6fb 30%, #f6fafd 60%, #ffffff 100%);
-}
-header::before{
-  content:'';position:absolute;top:-160px;left:50%;transform:translateX(-50%);
-  width:900px;height:900px;border-radius:50%;
-  background:radial-gradient(circle,rgba(91,168,212,0.13) 0%,transparent 68%);
-  pointer-events:none;
-}
-header::after{
-  content:'';position:absolute;inset:0;
-  background-image:radial-gradient(#b8ddf2 1px,transparent 1px);
-  background-size:28px 28px;opacity:0.35;pointer-events:none;
-}
+/* HERO */
+header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden;background:linear-gradient(175deg,#dff0fa 0%,#eef6fb 30%,#f6fafd 60%,#ffffff 100%)}
+header::before{content:'';position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(91,168,212,0.13) 0%,transparent 68%);pointer-events:none}
+header::after{content:'';position:absolute;inset:0;background-image:radial-gradient(#b8ddf2 1px,transparent 1px);background-size:28px 28px;opacity:0.35;pointer-events:none}
 .hero-content{position:relative;z-index:2;max-width:740px}
-
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,0.85);border:1px solid var(--blue-rule);
-  color:var(--blue);padding:7px 18px;border-radius:var(--pill);
-  font-size:11.5px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;
-  margin-bottom:30px;animation:fadeUp .5s ease both;
-  box-shadow:0 2px 10px rgba(42,100,150,0.07);
-}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.85);border:1px solid var(--blue-rule);color:var(--blue);padding:7px 18px;border-radius:var(--pill);font-size:11.5px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:30px;animation:fadeUp .5s ease both;box-shadow:0 2px 10px rgba(42,100,150,0.07)}
 .hero-eyebrow i{font-size:10px;color:var(--blue-lt)}
-
-header h1{
-  font-size:clamp(34px,5.5vw,62px);color:var(--navy);
-  font-weight:700;line-height:1.1;letter-spacing:-1.5px;
-  margin-bottom:22px;animation:fadeUp .6s .1s ease both;
-}
-.grad-text{
-  background:linear-gradient(135deg,var(--blue-lt),var(--blue));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.hero-sub{
-  font-size:16.5px;color:var(--text-lt);font-weight:300;
-  max-width:480px;margin:0 auto 40px;line-height:1.9;
-  animation:fadeUp .6s .2s ease both;
-}
+header h1{font-size:clamp(34px,5.5vw,62px);color:var(--navy);font-weight:700;line-height:1.1;letter-spacing:-1.5px;margin-bottom:22px;animation:fadeUp .6s .1s ease both}
+.grad-text{background:linear-gradient(135deg,var(--blue-lt),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:16.5px;color:var(--text-lt);font-weight:300;max-width:480px;margin:0 auto 40px;line-height:1.9;animation:fadeUp .6s .2s ease both}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s .3s ease both}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:var(--pill);font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:all .25s;border:2px solid transparent;cursor:pointer}
 .btn-solid{background:var(--navy);color:#fff;box-shadow:0 4px 16px rgba(26,58,92,0.22)}
 .btn-solid:hover{background:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,100,150,0.28)}
 .btn-outline{background:rgba(255,255,255,0.8);border-color:var(--blue-rule);color:var(--navy)}
 .btn-outline:hover{border-color:var(--blue);color:var(--blue);background:white;transform:translateY(-2px)}
-
-.hero-trust{
-  display:flex;justify-content:center;gap:44px;flex-wrap:wrap;
-  margin-top:64px;padding-top:36px;border-top:1px solid var(--blue-rule);
-  animation:fadeUp .6s .5s ease both;position:relative;z-index:2;
-}
+.hero-trust{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;margin-top:64px;padding-top:36px;border-top:1px solid var(--blue-rule);animation:fadeUp .6s .5s ease both;position:relative;z-index:2}
 .trust-item{text-align:center}
 .trust-num{font-size:25px;font-weight:700;color:var(--navy);letter-spacing:-0.5px;line-height:1}
 .trust-num span{color:var(--blue)}
 .trust-lbl{font-size:11.5px;color:var(--text-xs);margin-top:3px;font-weight:400}
-
 .hero-scroll{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);color:var(--blue-rule);font-size:17px;animation:bob 2s infinite;z-index:2}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 
-/* ── LAYOUT ── */
+/* LAYOUT */
 .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
 section{padding:96px 0}
 section.alt{background:var(--off)}
@@ -141,7 +69,7 @@ h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-wei
 .sub{text-align:center;font-size:15px;color:var(--text-lt);font-weight:300;max-width:460px;margin:0 auto 52px;line-height:1.85}
 .rule{display:block;width:36px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--blue-lt),var(--blue));margin:14px auto 48px}
 
-/* ── SERVICES ── */
+/* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:30px 26px;box-shadow:var(--sh);transition:transform .3s,box-shadow .3s,border-color .3s}
 .card:hover{transform:translateY(-5px);box-shadow:var(--sh-md);border-color:var(--blue-rule)}
@@ -150,7 +78,7 @@ h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-wei
 .card h3{font-size:15.5px;font-weight:600;color:var(--navy);margin-bottom:8px}
 .card p{font-size:13.5px;color:var(--text-lt);line-height:1.75;font-weight:300}
 
-/* ── PROCESS ── */
+/* PROCESS */
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:52px}
 .process-grid::before{content:'';position:absolute;top:27px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,var(--blue-lt),var(--blue),var(--blue-lt))}
 .step{text-align:center;padding:0 18px;position:relative}
@@ -161,7 +89,7 @@ h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-wei
 .step h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:7px}
 .step p{font-size:13px;color:var(--text-lt);line-height:1.7;font-weight:300}
 
-/* ── STATS ── */
+/* STATS */
 .stats-band{background:linear-gradient(135deg,var(--navy) 0%,#1e4d74 100%);padding:80px 0}
 .stats-band h2{color:#fff}
 .stats-band .sub{color:rgba(255,255,255,0.5)}
@@ -174,7 +102,7 @@ h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-wei
 .stat-big sup{font-size:20px;color:var(--blue-lt);vertical-align:super}
 .stat-desc{font-size:12.5px;color:rgba(255,255,255,.45);margin-top:8px;font-weight:300}
 
-/* ── INDUSTRIES ── */
+/* INDUSTRIES */
 .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .ind-card{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh);transition:all .25s;cursor:default}
 .ind-card:hover{border-color:var(--blue);background:var(--blue-tint);transform:translateX(4px)}
@@ -183,7 +111,7 @@ h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-wei
 .ind-name{font-size:13.5px;font-weight:600;color:var(--navy)}
 .ind-sub{font-size:11.5px;color:var(--text-xs);font-weight:300;margin-top:1px}
 
-/* ── TESTIMONIALS ── */
+/* TESTIMONIALS */
 .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .tcard{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:34px;box-shadow:var(--sh);transition:box-shadow .3s,transform .3s;position:relative}
 .tcard::before{content:'"';font-family:Georgia,serif;font-size:72px;line-height:1;color:var(--blue-rule);position:absolute;top:16px;right:24px}
@@ -195,7 +123,7 @@ h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-wei
 .tname{font-size:13.5px;font-weight:600;color:var(--navy)}
 .trole{font-size:11.5px;color:var(--text-xs);font-weight:300;margin-top:1px}
 
-/* ── CONTACT ── */
+/* CONTACT */
 .contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:44px;align-items:start}
 .cinfo{display:flex;flex-direction:column;gap:12px}
 .cinfo-item{display:flex;align-items:flex-start;gap:13px;padding:18px 20px;background:var(--off);border:1px solid var(--border);border-radius:var(--r);transition:border-color .2s,background .2s}
@@ -206,7 +134,6 @@ h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-wei
 .ci-val{font-size:13.5px;color:var(--navy);font-weight:500}
 .ci-val a{color:var(--navy);text-decoration:none}
 .ci-val a:hover{color:var(--blue)}
-
 .cform{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:38px 34px;box-shadow:var(--sh-md)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 .fg{margin-bottom:15px}
@@ -222,7 +149,38 @@ h2{text-align:center;font-size:clamp(26px,3.5vw,38px);color:var(--navy);font-wei
 .form-success h4{font-size:17px;color:var(--navy);font-weight:600;margin-bottom:5px}
 .form-success p{font-size:13px;color:var(--text-lt);font-weight:300}
 
-/* ── FOOTER ── */
+/* NEW: PLATFORM CTA SECTION */
+.platform-band{background:linear-gradient(135deg,#0f2540 0%,var(--navy) 50%,#1e4d74 100%);padding:80px 0;position:relative;overflow:hidden}
+.platform-band::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(91,168,212,0.08) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.platform-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.platform-text .section-tag{text-align:left;color:var(--blue-lt)}
+.platform-text h2{text-align:left;color:#fff;margin-bottom:16px}
+.platform-text p{font-size:15px;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.85;margin-bottom:32px;max-width:420px}
+.platform-features{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.pf-item{display:flex;align-items:center;gap:12px;font-size:13.5px;color:rgba(255,255,255,0.75);font-weight:400}
+.pf-item i{width:28px;height:28px;background:rgba(91,168,212,0.15);border:1px solid rgba(91,168,212,0.25);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--blue-lt);flex-shrink:0}
+.platform-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border:none;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
+.btn-white:hover{background:var(--blue-tint);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:rgba(255,255,255,0.7);border:1.5px solid rgba(255,255,255,0.2)}
+.btn-ghost:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.4);color:#fff;transform:translateY(-2px)}
+
+/* Platform preview card */
+.platform-preview{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;backdrop-filter:blur(12px)}
+.preview-bar{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.preview-dots{display:flex;gap:5px}
+.preview-dots span{width:10px;height:10px;border-radius:50%}
+.preview-url{flex:1;background:rgba(255,255,255,0.06);border-radius:6px;padding:5px 12px;font-size:11px;color:rgba(255,255,255,0.35);font-family:monospace}
+.preview-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.pkpi{background:rgba(255,255,255,0.06);border-radius:10px;padding:12px;text-align:center}
+.pkpi-num{font-size:22px;font-weight:700;color:#fff;line-height:1}
+.pkpi-lbl{font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px}
+.preview-row{background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.preview-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.preview-row-text{font-size:11.5px;color:rgba(255,255,255,0.55);flex:1}
+.preview-badge{font-size:9.5px;padding:2px 8px;border-radius:999px;font-weight:600}
+
+/* FOOTER */
 footer{background:var(--navy);padding:58px 0 34px}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
 .fbrand p{font-size:12.5px;color:rgba(255,255,255,.38);line-height:1.8;max-width:230px;font-weight:300;margin-top:14px}
@@ -238,12 +196,12 @@ footer{background:var(--navy);padding:58px 0 34px}
 .socials a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.32);font-size:13px;text-decoration:none;transition:all .2s}
 .socials a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff;transform:translateY(-2px)}
 
-/* ── ANIMATIONS ── */
+/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:960px){
   nav{padding:0 24px}
   .services-grid,.ind-grid{grid-template-columns:1fr 1fr}
@@ -253,13 +211,14 @@ footer{background:var(--navy);padding:58px 0 34px}
   .testi-grid{grid-template-columns:1fr}
   .contact-layout{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
+  .platform-inner{grid-template-columns:1fr}
 }
 @media(max-width:640px){
   nav{height:64px}
   .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:10px 0;border-bottom:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.07)}
   .nav-links.open{display:flex}
   .nav-links a{padding:13px 22px;border-radius:0;font-size:14px}
-  .nav-cta{margin:8px 14px;border-radius:var(--pill)!important;text-align:center;display:block}
+  .nav-cta,.nav-login{margin:8px 14px;border-radius:var(--pill)!important;text-align:center;display:block}
   .hamburger{display:block}
   .services-grid,.ind-grid,.process-grid,.stats-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
@@ -275,45 +234,30 @@ footer{background:var(--navy);padding:58px 0 34px}
 <script>
 const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
   <defs>
-    <linearGradient id="dna-top" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#5ba8d4"/>
-      <stop offset="100%" stop-color="#2a6496"/>
-    </linearGradient>
-    <linearGradient id="dna-bot" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2a6496"/>
-      <stop offset="100%" stop-color="#5ba8d4"/>
-    </linearGradient>
-    <linearGradient id="orbit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#5ba8d4" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#2a6496" stop-opacity="0.9"/>
-    </linearGradient>
+    <linearGradient id="dna-top" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5ba8d4"/><stop offset="100%" stop-color="#2a6496"/></linearGradient>
+    <linearGradient id="dna-bot" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2a6496"/><stop offset="100%" stop-color="#5ba8d4"/></linearGradient>
+    <linearGradient id="orbit-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5ba8d4" stop-opacity="0.9"/><stop offset="100%" stop-color="#2a6496" stop-opacity="0.9"/></linearGradient>
   </defs>
   <ellipse cx="100" cy="100" rx="62" ry="22" stroke="url(#orbit-grad)" stroke-width="2.5" fill="none" opacity="0.75"/>
   <ellipse cx="100" cy="100" rx="62" ry="22" stroke="url(#orbit-grad)" stroke-width="2.5" fill="none" opacity="0.75" transform="rotate(60 100 100)"/>
   <ellipse cx="100" cy="100" rx="62" ry="22" stroke="url(#orbit-grad)" stroke-width="2.5" fill="none" opacity="0.75" transform="rotate(-60 100 100)"/>
   <path d="M 84 28 C 72 50, 112 72, 100 94 C 88 116, 72 130, 84 172" stroke="url(#dna-top)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
   <path d="M 116 28 C 128 50, 88 72, 100 94 C 112 116, 128 130, 116 172" stroke="url(#dna-bot)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-  <line x1="88"  y1="42"  x2="112" y2="38"  stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <line x1="93"  y1="57"  x2="107" y2="58"  stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <line x1="103" y1="71"  x2="97"  y2="74"  stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <line x1="100" y1="86"  x2="100" y2="90"  stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <line x1="97"  y1="102" x2="103" y2="106" stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <line x1="93"  y1="118" x2="107" y2="122" stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <line x1="88"  y1="134" x2="112" y2="138" stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <line x1="88"  y1="150" x2="112" y2="154" stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <line x1="90"  y1="165" x2="110" y2="163" stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
-  <circle cx="84"  cy="28"  r="4"   fill="#5ba8d4"/>
-  <circle cx="86"  cy="60"  r="3.5" fill="#3d8fc0"/>
-  <circle cx="94"  cy="94"  r="3.5" fill="#2a6496"/>
-  <circle cx="88"  cy="130" r="3.5" fill="#3d8fc0"/>
-  <circle cx="84"  cy="172" r="4"   fill="#5ba8d4"/>
-  <circle cx="116" cy="28"  r="4"   fill="#5ba8d4"/>
-  <circle cx="114" cy="60"  r="3.5" fill="#3d8fc0"/>
-  <circle cx="106" cy="94"  r="3.5" fill="#2a6496"/>
-  <circle cx="112" cy="130" r="3.5" fill="#3d8fc0"/>
-  <circle cx="116" cy="172" r="4"   fill="#5ba8d4"/>
-  <circle cx="100" cy="100" r="7"   fill="url(#dna-top)"/>
-  <circle cx="100" cy="100" r="3.5" fill="#fff" opacity="0.9"/>
+  <line x1="88" y1="42" x2="112" y2="38" stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="93" y1="57" x2="107" y2="58" stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="103" y1="71" x2="97" y2="74" stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="100" y1="86" x2="100" y2="90" stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="97" y1="102" x2="103" y2="106" stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="93" y1="118" x2="107" y2="122" stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="88" y1="134" x2="112" y2="138" stroke="#5ba8d4" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="88" y1="150" x2="112" y2="154" stroke="#3d8fc0" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <line x1="90" y1="165" x2="110" y2="163" stroke="#2a6496" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="84" cy="28" r="4" fill="#5ba8d4"/><circle cx="86" cy="60" r="3.5" fill="#3d8fc0"/>
+  <circle cx="94" cy="94" r="3.5" fill="#2a6496"/><circle cx="88" cy="130" r="3.5" fill="#3d8fc0"/>
+  <circle cx="84" cy="172" r="4" fill="#5ba8d4"/><circle cx="116" cy="28" r="4" fill="#5ba8d4"/>
+  <circle cx="114" cy="60" r="3.5" fill="#3d8fc0"/><circle cx="106" cy="94" r="3.5" fill="#2a6496"/>
+  <circle cx="112" cy="130" r="3.5" fill="#3d8fc0"/><circle cx="116" cy="172" r="4" fill="#5ba8d4"/>
+  <circle cx="100" cy="100" r="7" fill="url(#dna-top)"/><circle cx="100" cy="100" r="3.5" fill="#fff" opacity="0.9"/>
 </svg>`;
 </script>
 
@@ -331,6 +275,7 @@ const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" 
     <li><a href="#process">How It Works</a></li>
     <li><a href="#industries">Industries</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="https://app.quantuminfosystems.com" target="_blank" class="nav-login"><i class="fa-solid fa-lock"></i> Team Login</a></li>
     <li><a href="#contact" class="nav-cta">Contact Us</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa fa-bars"></i></button>
@@ -340,10 +285,7 @@ const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" 
 <header>
   <div class="hero-content">
     <div id="heroMark" style="margin:0 auto 28px;width:80px;height:80px;animation:fadeUp .4s ease both;position:relative;z-index:2"></div>
-    <div class="hero-eyebrow">
-      <i class="fa-solid fa-circle-check"></i>
-      Trusted by 50+ companies across North America
-    </div>
+    <div class="hero-eyebrow"><i class="fa-solid fa-circle-check"></i> Trusted by 50+ companies across North America</div>
     <h1>Connecting <span class="grad-text">Top Talent</span><br>With Leading Companies</h1>
     <p class="hero-sub">We bridge the gap between exceptional professionals and the organizations that need them — faster, smarter, better.</p>
     <div class="hero-btns">
@@ -439,6 +381,65 @@ const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" 
   </div>
 </section>
 
+<!-- PLATFORM CTA — NEW SECTION -->
+<div class="platform-band">
+  <div class="wrap">
+    <div class="platform-inner">
+      <div class="platform-text reveal">
+        <span class="section-tag" style="text-align:left;display:block;margin-bottom:10px">Talent Platform</span>
+        <h2 style="text-align:left;color:#fff;font-size:clamp(24px,3vw,36px);margin-bottom:16px">Powered by our<br><span class="grad-text">AI-driven ATS</span></h2>
+        <p>Behind every placement is our proprietary talent platform — built to find, match, and submit the right consultant to the right role in minutes, not days.</p>
+        <div class="platform-features">
+          <div class="pf-item"><i class="fa-solid fa-bolt"></i> AI job matching across Dice, LinkedIn & Indeed</div>
+          <div class="pf-item"><i class="fa-solid fa-people-group"></i> Real-time consultant bench tracking</div>
+          <div class="pf-item"><i class="fa-solid fa-envelope-open-text"></i> One-click Gmail submissions with auto-fill</div>
+          <div class="pf-item"><i class="fa-solid fa-chart-pie"></i> Live analytics — submission to placement rates</div>
+          <div class="pf-item"><i class="fa-solid fa-lock"></i> Role-based access for your entire team</div>
+        </div>
+        <div class="platform-btns">
+          <a href="https://app.quantuminfosystems.com" target="_blank" class="btn btn-white"><i class="fa-solid fa-arrow-right-to-bracket"></i> Team Login</a>
+          <a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-envelope"></i> Request a Demo</a>
+        </div>
+      </div>
+
+      <!-- Mini app preview -->
+      <div class="platform-preview reveal">
+        <div class="preview-bar">
+          <div class="preview-dots">
+            <span style="background:#ff5f57"></span>
+            <span style="background:#febc2e"></span>
+            <span style="background:#28c840"></span>
+          </div>
+          <div class="preview-url">app.quantuminfosystems.com</div>
+        </div>
+        <div class="preview-kpis">
+          <div class="pkpi"><div class="pkpi-num" style="color:#5ba8d4">4</div><div class="pkpi-lbl">On Bench</div></div>
+          <div class="pkpi"><div class="pkpi-num" style="color:#f4b942">12</div><div class="pkpi-lbl">Submitted</div></div>
+          <div class="pkpi"><div class="pkpi-num" style="color:#48bb78">3</div><div class="pkpi-lbl">Placed</div></div>
+        </div>
+        <div class="preview-row">
+          <div class="preview-dot" style="background:#48bb78"></div>
+          <div class="preview-row-text">Alex Rivera · Sr. Java Engineer</div>
+          <span class="preview-badge" style="background:rgba(72,187,120,0.15);color:#48bb78">Available</span>
+        </div>
+        <div class="preview-row">
+          <div class="preview-dot" style="background:#f4b942"></div>
+          <div class="preview-row-text">Jordan Kim · DevOps Engineer</div>
+          <span class="preview-badge" style="background:rgba(244,185,66,0.15);color:#f4b942">Interview</span>
+        </div>
+        <div class="preview-row">
+          <div class="preview-dot" style="background:#5ba8d4"></div>
+          <div class="preview-row-text">Morgan Patel · Data Engineer</div>
+          <span class="preview-badge" style="background:rgba(91,168,212,0.15);color:#5ba8d4">Submitted</span>
+        </div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);font-size:11px;color:rgba(255,255,255,0.25);text-align:center">
+          🔒 Invite-only · Role-based access
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
@@ -481,16 +482,13 @@ const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" 
       <div class="fbrand">
         <a href="#" class="logo-lockup light" id="footerLogo">
           <div class="logo-svg" style="width:38px;height:38px"></div>
-          <div class="logo-words">
-            <span class="logo-main">QuantumInfo Systems</span>
-            <span class="logo-sub">Talent Solutions</span>
-          </div>
+          <div class="logo-words"><span class="logo-main">QuantumInfo Systems</span><span class="logo-sub">Talent Solutions</span></div>
         </a>
         <p>Connecting exceptional professionals with the organizations that need them most — since 2023.</p>
       </div>
       <div class="fcol"><h5>Services</h5><ul><li><a href="#services">Permanent Recruitment</a></li><li><a href="#services">Contract Staffing</a></li><li><a href="#services">Executive Search</a></li><li><a href="#services">RPO Solutions</a></li><li><a href="#services">Talent Strategy</a></li></ul></div>
       <div class="fcol"><h5>Industries</h5><ul><li><a href="#industries">IT & Technology</a></li><li><a href="#industries">Healthcare</a></li><li><a href="#industries">Finance</a></li><li><a href="#industries">Engineering</a></li><li><a href="#industries">Startups</a></li></ul></div>
-      <div class="fcol"><h5>Company</h5><ul><li><a href="#why-us">About Us</a></li><li><a href="#testimonials">Client Stories</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+      <div class="fcol"><h5>Company</h5><ul><li><a href="#why-us">About Us</a></li><li><a href="#testimonials">Client Stories</a></li><li><a href="#contact">Contact</a></li><li><a href="https://app.quantuminfosystems.com" target="_blank">Team Login →</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
     </div>
     <hr class="footer-line">
     <div class="footer-bottom">
@@ -505,64 +503,28 @@ const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" 
 </footer>
 
 <script>
-// Stamp SVG logo into every .logo-svg slot
 document.querySelectorAll('.logo-svg').forEach(el => {
   el.innerHTML = LOGO_SVG;
   const svg = el.querySelector('svg');
-  if (svg) { svg.style.width = '100%'; svg.style.height = '100%'; }
+  if (svg) { svg.style.width='100%'; svg.style.height='100%'; }
 });
-
-// Hero mark
 const heroMark = document.getElementById('heroMark');
-if (heroMark) {
-  heroMark.innerHTML = LOGO_SVG;
-  const svg = heroMark.querySelector('svg');
-  if (svg) { svg.style.width = '100%'; svg.style.height = '100%'; }
-}
-
-// Footer logo: lighten orbits for dark bg
+if (heroMark) { heroMark.innerHTML = LOGO_SVG; const svg=heroMark.querySelector('svg'); if(svg){svg.style.width='100%';svg.style.height='100%';} }
 const footerSvg = document.querySelector('#footerLogo .logo-svg svg');
-if (footerSvg) {
-  footerSvg.querySelectorAll('ellipse').forEach(e => {
-    e.setAttribute('stroke', 'rgba(255,255,255,0.5)');
-  });
-}
+if (footerSvg) footerSvg.querySelectorAll('ellipse').forEach(e=>e.setAttribute('stroke','rgba(255,255,255,0.5)'));
 
-// Scroll reveal
 const io = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('in'), i * 65);
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  entries.forEach((e,i) => { if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*65);io.unobserve(e.target);} });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// Nav shadow on scroll
-window.addEventListener('scroll', () => {
-  document.getElementById('mainNav').classList.toggle('scrolled', scrollY > 10);
-});
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',scrollY>10));
 
-// Hamburger
-const hb = document.getElementById('hamburger');
-const nl = document.getElementById('navLinks');
-hb.addEventListener('click', () => {
-  nl.classList.toggle('open');
-  hb.innerHTML = nl.classList.contains('open')
-    ? '<i class="fa fa-xmark"></i>' : '<i class="fa fa-bars"></i>';
-});
-document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
-  nl.classList.remove('open');
-  hb.innerHTML = '<i class="fa fa-bars"></i>';
-}));
+const hb=document.getElementById('hamburger'),nl=document.getElementById('navLinks');
+hb.addEventListener('click',()=>{nl.classList.toggle('open');hb.innerHTML=nl.classList.contains('open')?'<i class="fa fa-xmark"></i>':'<i class="fa fa-bars"></i>';});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');hb.innerHTML='<i class="fa fa-bars"></i>';}));
 
-// Contact form
-function submitForm(e) {
-  e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
-}
+function submitForm(e){e.preventDefault();document.getElementById('contactForm').style.display='none';document.getElementById('formSuccess').style.display='block';}
 </script>
 </body>
 </html>
